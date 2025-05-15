@@ -8,10 +8,10 @@ with open("requirements.txt", "r") as fh:
 
 setuptools.setup(
     name="harmonicsonification",
-    version="0.0.6",
+    version="0.0.1",
     author="Robert Lieck",
     author_email="robert.lieck@durham.ac.uk",
-    description="A template repo for Python packages with GitHub actions and documentation",
+    description="Sonify data using harmonic overtones ",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/robert-lieck/harmonicsonification",
