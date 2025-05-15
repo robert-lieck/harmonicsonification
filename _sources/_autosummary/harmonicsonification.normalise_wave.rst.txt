@@ -1,0 +1,6 @@
+harmonicsonification.normalise\_wave
+====================================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: normalise_wave

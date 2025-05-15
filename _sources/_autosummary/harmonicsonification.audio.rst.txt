@@ -1,0 +1,6 @@
+harmonicsonification.audio
+==========================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: audio

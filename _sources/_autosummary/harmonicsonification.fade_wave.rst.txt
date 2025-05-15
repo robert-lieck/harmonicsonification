@@ -1,0 +1,6 @@
+harmonicsonification.fade\_wave
+===============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: fade_wave

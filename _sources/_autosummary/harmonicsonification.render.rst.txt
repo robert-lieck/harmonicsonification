@@ -1,0 +1,6 @@
+harmonicsonification.render
+===========================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: render

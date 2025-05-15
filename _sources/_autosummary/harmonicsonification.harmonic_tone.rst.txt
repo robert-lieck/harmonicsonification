@@ -1,0 +1,6 @@
+harmonicsonification.harmonic\_tone
+===================================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: harmonic_tone

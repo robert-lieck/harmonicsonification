@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pythontemplatepackage.rename &mdash; pythontemplatepackage  documentation</title>
+  <title>harmonicsonification.audio &mdash; harmonicsonification  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pythontemplatepackage.rename.main" href="pythontemplatepackage.rename.main.html" />
-    <link rel="prev" title="pythontemplatepackage.myclass.MyClass" href="pythontemplatepackage.myclass.MyClass.html" /> 
+    <link rel="next" title="harmonicsonification.fade_wave" href="harmonicsonification.fade_wave.html" />
+    <link rel="prev" title="harmonicsonification" href="harmonicsonification.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,7 +37,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            pythontemplatepackage
+            harmonicsonification
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,15 +49,20 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">PythonTemplatePackage Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">HarmonicSonification Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_summary.html">API Summary</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="pythontemplatepackage.html">pythontemplatepackage</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pythontemplatepackage.myclass.html">pythontemplatepackage.myclass</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">pythontemplatepackage.rename</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pythontemplatepackage.rename.main.html">pythontemplatepackage.rename.main</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pythontemplatepackage.rename.replace_in_file.html">pythontemplatepackage.rename.replace_in_file</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="harmonicsonification.html">harmonicsonification</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">harmonicsonification.audio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#harmonicsonification.audio"><code class="docutils literal notranslate"><span class="pre">audio()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.fade_wave.html">harmonicsonification.fade_wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.harmonic_tone.html">harmonicsonification.harmonic_tone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.normalise_wave.html">harmonicsonification.normalise_wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.render.html">harmonicsonification.render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.save.html">harmonicsonification.save</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.seed_everything.html">harmonicsonification.seed_everything</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sound.html">harmonicsonification.sound</a></li>
 </ul>
 </li>
 </ul>
@@ -70,7 +75,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">pythontemplatepackage</a>
+          <a href="../index.html">harmonicsonification</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -79,8 +84,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../api_summary.html">API Summary</a></li>
-          <li class="breadcrumb-item"><a href="pythontemplatepackage.html">pythontemplatepackage</a></li>
-      <li class="breadcrumb-item active">pythontemplatepackage.rename</li>
+          <li class="breadcrumb-item"><a href="harmonicsonification.html">harmonicsonification</a></li>
+      <li class="breadcrumb-item active">harmonicsonification.audio</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -89,33 +94,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-pythontemplatepackage.rename">
-<span id="pythontemplatepackage-rename"></span><h1>pythontemplatepackage.rename<a class="headerlink" href="#module-pythontemplatepackage.rename" title="Link to this heading"></a></h1>
-<p class="rubric">Functions</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pythontemplatepackage.rename.main.html#pythontemplatepackage.rename.main" title="pythontemplatepackage.rename.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>(args)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pythontemplatepackage.rename.replace_in_file.html#pythontemplatepackage.rename.replace_in_file" title="pythontemplatepackage.rename.replace_in_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_in_file</span></code></a>(file_path, find_str, replace_str)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+  <section id="harmonicsonification-audio">
+<h1>harmonicsonification.audio<a class="headerlink" href="#harmonicsonification-audio" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="harmonicsonification.audio">
+<span class="sig-prename descclassname"><span class="pre">harmonicsonification.</span></span><span class="sig-name descname"><span class="pre">audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wave</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/harmonicsonification.html#audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonicsonification.audio" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pythontemplatepackage.myclass.MyClass.html" class="btn btn-neutral float-left" title="pythontemplatepackage.myclass.MyClass" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pythontemplatepackage.rename.main.html" class="btn btn-neutral float-right" title="pythontemplatepackage.rename.main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="harmonicsonification.html" class="btn btn-neutral float-left" title="harmonicsonification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="harmonicsonification.fade_wave.html" class="btn btn-neutral float-right" title="harmonicsonification.fade_wave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022 Robert Lieck.</p>
+    <p>&#169; Copyright 2025 Robert Lieck.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

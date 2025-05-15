@@ -1,0 +1,37 @@
+﻿harmonicsonification
+====================
+
+.. automodule:: harmonicsonification
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      audio
+      fade_wave
+      harmonic_tone
+      normalise_wave
+      render
+      save
+      seed_everything
+      sound
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
