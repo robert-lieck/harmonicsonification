@@ -5,3 +5,10 @@ sphinx-autodoc-typehints
 autoclasstoc
 sphinx-gallery
 matplotlib
+
+IPython
+matplotlib
+seaborn
+pandas
+numpy
+scipy

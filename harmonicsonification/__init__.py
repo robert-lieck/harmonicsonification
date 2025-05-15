@@ -3,7 +3,6 @@ import random
 import IPython.display
 import numpy as np
 from scipy.io.wavfile import write as write_wav
-import matplotlib.pyplot as plt
 
 
 sampling_rate = 44000
