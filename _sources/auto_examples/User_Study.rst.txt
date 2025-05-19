@@ -93,7 +93,7 @@ outside the distribution).
      0.02 0.02]
     outliers in [-3, 3]
 
-    [<matplotlib.lines.Line2D object at 0x7fee4b81dd30>]
+    [<matplotlib.lines.Line2D object at 0x7fdac017d0a0>]
 
 
 
@@ -434,7 +434,7 @@ Now we just print a point index (this is shown to the participants)
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.678 seconds)
+   **Total running time of the script:** (0 minutes 1.567 seconds)
 
 
 .. _sphx_glr_download_auto_examples_User_Study.py:
