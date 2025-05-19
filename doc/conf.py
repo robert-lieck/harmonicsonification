@@ -72,5 +72,7 @@ sphinx_gallery_conf = {"filename_pattern": ''}
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_extra_path = ['extra']
+
 # In the main body of an autoclass directive, insert both the class’ and the __init__ method’s docstring
 autoclass_content = 'both'

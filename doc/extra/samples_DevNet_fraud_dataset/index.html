@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Dataset Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 2em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .group {
+      margin-bottom: 1.5em;
+    }
+    audio {
+      display: block;
+      margin: 5px 0 15px 0;
+    }
+    .filename {
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Audio Dataset Player</h1>
+
+  <script>
+    const files = [
+      "anomalous_data_point_0_fraud_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_0_fraud_dataset_frequency_modulation.wav",
+      "anomalous_data_point_0_toy_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_0_toy_dataset_frequency_modulation.wav",
+      "anomalous_data_point_1_fraud_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_1_fraud_dataset_frequency_modulation.wav",
+      "anomalous_data_point_1_toy_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_1_toy_dataset_frequency_modulation.wav",
+      "anomalous_data_point_2_fraud_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_2_fraud_dataset_frequency_modulation.wav",
+      "anomalous_data_point_2_toy_dataset_frequency_modulation.wav",
+      "anomalous_data_point_3_fraud_dataset_amplitude_modulation.wav",
+      "anomalous_data_point_3_fraud_dataset_frequency_modulation.wav",
+      "anomalous_data_point_3_toy_dataset_amplitude_modulation.wav",
+      "typical_data_point_0_fraud_dataset_amplitude_modulation.wav",
+      "typical_data_point_0_fraud_dataset_frequency_modulation.wav",
+      "typical_data_point_0_toy_dataset_amplitude_modulation.wav",
+      "typical_data_point_0_toy_dataset_frequency_modulation.wav",
+      "typical_data_point_1_fraud_dataset_amplitude_modulation.wav",
+      "typical_data_point_1_fraud_dataset_frequency_modulation.wav",
+      "typical_data_point_1_toy_dataset_amplitude_modulation.wav",
+      "typical_data_point_1_toy_dataset_frequency_modulation.wav",
+      "typical_data_point_2_fraud_dataset_amplitude_modulation.wav",
+      "typical_data_point_2_fraud_dataset_frequency_modulation.wav",
+      "typical_data_point_2_toy_dataset_amplitude_modulation.wav",
+      "typical_data_point_2_toy_dataset_frequency_modulation.wav",
+      "typical_data_point_3_fraud_dataset_amplitude_modulation.wav",
+      "typical_data_point_3_fraud_dataset_frequency_modulation.wav"
+    ];
+
+    const sortKey = filename => {
+      const match = filename.match(/(typical|anomalous)_data_point_(\d+)_(fraud_dataset|toy_dataset)_(amplitude_modulation|frequency_modulation)/);
+      const type = match[1];
+      const index = parseInt(match[2], 10);
+      const dataset = match[3];
+      const modulation = match[4];
+
+      const datasetOrder = { 'fraud_dataset': 0, 'toy_dataset': 1 };
+      const modulationOrder = { 'amplitude_modulation': 0, 'frequency_modulation': 1 };
+      const typeOrder = { 'typical': 0, 'anomalous': 1 };
+
+      return [
+        datasetOrder[dataset],
+        modulationOrder[modulation],
+        index,
+        typeOrder[type]
+      ];
+    };
+
+    files.sort((a, b) => {
+      const ka = sortKey(a);
+      const kb = sortKey(b);
+      for (let i = 0; i < ka.length; i++) {
+        if (ka[i] !== kb[i]) return ka[i] - kb[i];
+      }
+      return 0;
+    });
+
+    const groupKey = filename => {
+      const match = filename.match(/(typical|anomalous)_data_point_(\d+)_(fraud_dataset|toy_dataset)_(amplitude_modulation|frequency_modulation)/);
+      const dataset = match[3];
+      const modulation = match[4];
+      return `${dataset} - ${modulation}`;
+    };
+
+    const groups = {};
+
+    files.forEach(file => {
+      const key = groupKey(file);
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(file);
+    });
+
+    for (const [group, groupFiles] of Object.entries(groups)) {
+      document.write(`<h2>${group}</h2><div class="group">`);
+      groupFiles.forEach(file => {
+        document.write(`
+          <div>
+            <div class="filename">${file}</div>
+            <audio controls>
+              <source src="${file}" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        `);
+      });
+      document.write('</div>');
+    }
+  </script>
+</body>
+</html>
