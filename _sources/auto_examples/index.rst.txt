@@ -14,18 +14,18 @@ HarmonicSonification Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Harmonic Sonification">
+    <div class="sphx-glr-thumbcontainer" tooltip="User Study">
 
 .. only:: html
 
-  .. image:: /auto_examples/images/thumb/sphx_glr_Harmonic_Sonification_thumb.png
+  .. image:: /auto_examples/images/thumb/sphx_glr_User_Study_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_Harmonic_Sonification.py`
+  :ref:`sphx_glr_auto_examples_User_Study.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Harmonic Sonification</div>
+      <div class="sphx-glr-thumbnail-title">User Study</div>
     </div>
 
 
@@ -39,7 +39,7 @@ HarmonicSonification Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/Harmonic_Sonification
+   /auto_examples/User_Study
 
 
 .. only:: html

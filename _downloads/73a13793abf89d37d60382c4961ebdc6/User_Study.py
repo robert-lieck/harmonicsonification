@@ -1,7 +1,7 @@
 
 """
-Harmonic Sonification
-=====================
+User Study
+==========
 """
 
 import random
@@ -16,7 +16,7 @@ hs.seed_everything(42)
 # %%
 # Data Set Creation
 # -----------------
-
+#
 # We want to test whether our harmonic sonification approach allows users to distinguish typical data points from
 # outliers just based on the sound. For this, we first create an artificial data set with the characteristics
 # typically obtained from applying PCA (i.e. dimensions with decreasing variance). We then create an _outlier_ data
@@ -53,7 +53,7 @@ plt.plot(std, '-o');
 # %%
 # Sonification
 # ------------
-
+#
 # Lowest and highest frequency that may appear in the sonification, just for reference.
 
 base_freq = 110

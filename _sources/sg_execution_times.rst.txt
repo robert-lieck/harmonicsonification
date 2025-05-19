@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:01.518** total execution time for 1 file **from all galleries**:
+**00:01.565** total execution time for 1 file **from all galleries**:
 
 .. container::
 
@@ -32,6 +32,6 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_Harmonic_Sonification.py` (``../examples/Harmonic_Sonification.py``)
-     - 00:01.518
+   * - :ref:`sphx_glr_auto_examples_User_Study.py` (``../examples/User_Study.py``)
+     - 00:01.565
      - 0.0
