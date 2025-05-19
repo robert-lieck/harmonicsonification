@@ -50,7 +50,13 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">HarmonicSonification Gallery</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Harmonic Sonification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Harmonic Sonification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-set-creation">Data Set Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sonification">Sonification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-data">Example Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trials">Trials</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api_summary.html">API Summary</a></li>
@@ -87,9 +93,6 @@ to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="harmonic-sonification">
 <span id="sphx-glr-auto-examples-harmonic-sonification-py"></span><h1>Harmonic Sonification<a class="headerlink" href="#harmonic-sonification" title="Link to this heading"></a></h1>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Harmonic Sonification</span>
-</pre></div>
-</div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -97,14 +100,17 @@ to download the full example code.</p>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">harmonicsonification</span> <span class="k">as</span> <span class="nn">hs</span>
 <span class="n">hs</span><span class="o">.</span><span class="n">seed_everything</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-
-
-<span class="c1"># ## Data Set Creation</span>
-
-<span class="c1"># We want to test whether our harmonic sonification approach allows users to distinguish typical data points from outliers just based on the sound. For this, we first create an artificial data set with the characteristics typically obtained from applying PCA (i.e. dimensions with decreasing variance). We then create an _outlier_ data set with uniformly distributed points (some of these points will be like typical data points, but most will fall outside the distribution).</span>
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">dim</span> <span class="o">=</span> <span class="mi">16</span>                               <span class="c1"># dimensions</span>
+<section id="data-set-creation">
+<h2>Data Set Creation<a class="headerlink" href="#data-set-creation" title="Link to this heading"></a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># We want to test whether our harmonic sonification approach allows users to distinguish typical data points from</span>
+<span class="c1"># outliers just based on the sound. For this, we first create an artificial data set with the characteristics</span>
+<span class="c1"># typically obtained from applying PCA (i.e. dimensions with decreasing variance). We then create an _outlier_ data</span>
+<span class="c1"># set with uniformly distributed points (some of these points will be like typical data points, but most will fall</span>
+<span class="c1"># outside the distribution).</span>
+
+<span class="n">dim</span> <span class="o">=</span> <span class="mi">16</span>                               <span class="c1"># dimensions</span>
 <span class="n">n_data</span> <span class="o">=</span> <span class="mi">100</span>                           <span class="c1"># number of data points</span>
 <span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">dim</span><span class="p">))</span>  <span class="c1"># standard deviations</span>
 <span class="n">uniform</span> <span class="o">=</span> <span class="mi">3</span>                            <span class="c1"># width of the uniform outlier distribution</span>
@@ -119,9 +125,6 @@ to download the full example code.</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;std: </span><span class="si">{</span><span class="n">std</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;outliers in [-</span><span class="si">{</span><span class="n">uniform</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">uniform</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">std</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">);</span>
-
-
-<span class="c1"># We can create scatter plots for all pairs of dimensions, which gives a rough idea of the two distributions.</span>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_Harmonic_Sonification_001.png" srcset="../_images/sphx_glr_Harmonic_Sonification_001.png" alt="Harmonic Sonification" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>16 dimensions
@@ -130,28 +133,27 @@ std: [1.   0.77 0.59 0.45 0.34 0.26 0.2  0.15 0.12 0.09 0.07 0.05 0.04 0.03
  0.02 0.02]
 outliers in [-3, 3]
 
-[&lt;matplotlib.lines.Line2D object at 0x7fb091832750&gt;]
+[&lt;matplotlib.lines.Line2D object at 0x7f403579b6e0&gt;]
 </pre></div>
 </div>
+<p>We can create scatter plots for all pairs of dimensions, which gives a rough idea of the two distributions
+(commented out because it takes very long).</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># combined = pd.concat([outlier, data], ignore_index=True)</span>
 <span class="c1"># p = sns.pairplot(combined, hue=&#39;type&#39;, palette=[&#39;blue&#39;, &#39;red&#39;], diag_kind=None)</span>
 <span class="c1"># for ax in p.axes.flatten():</span>
 <span class="c1">#     ax.set_xlim(-uniform, uniform)</span>
 <span class="c1">#     ax.set_ylim(-uniform, uniform)</span>
-
-
-<span class="c1"># ## Sonification</span>
-
-<span class="c1"># Lowest and highest frequency that may appear in the sonification, just for reference.</span>
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">base_freq</span> <span class="o">=</span> <span class="mi">110</span>
+</section>
+<section id="sonification">
+<h2>Sonification<a class="headerlink" href="#sonification" title="Link to this heading"></a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lowest and highest frequency that may appear in the sonification, just for reference.</span>
+
+<span class="n">base_freq</span> <span class="o">=</span> <span class="mi">110</span>
 <span class="n">amps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="n">dim</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim</span><span class="p">)]</span>
 <span class="n">hs</span><span class="o">.</span><span class="n">audio</span><span class="p">(</span><span class="n">hs</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">hs</span><span class="o">.</span><span class="n">harmonic_tone</span><span class="p">(</span><span class="n">base_freq</span><span class="p">,</span> <span class="n">amps</span><span class="o">=</span><span class="n">amps</span><span class="p">)))</span>
 <span class="n">amps</span>
-
-
-<span class="c1"># Helper functions to extract data points, randomise their order (for the experiment), and sonify them</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;IPython.lib.display.Audio object&gt;
@@ -159,6 +161,7 @@ outliers in [-3, 3]
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 </pre></div>
 </div>
+<p>Helper functions to extract data points, randomise their order (for the experiment), and sonify them</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_points</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outlier</span><span class="p">,</span> <span class="n">shuffle</span><span class="p">):</span>
     <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">outlier</span><span class="p">,</span> <span class="s1">&#39;outlier&#39;</span><span class="p">)]:</span>
@@ -188,23 +191,15 @@ outliers in [-3, 3]
         <span class="k">if</span> <span class="n">print_amps</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">amps</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
         <span class="n">hs</span><span class="o">.</span><span class="n">audio</span><span class="p">(</span><span class="n">hs</span><span class="o">.</span><span class="n">harmonic_tone</span><span class="p">(</span><span class="n">base_freq</span><span class="p">,</span> <span class="n">amps</span><span class="o">=</span><span class="n">amps</span><span class="p">))</span>
-
-
-<span class="c1"># ### Example Data</span>
-
-<span class="c1"># Here are some typical data points as well as some outliers.</span>
 </pre></div>
 </div>
+</section>
+<section id="example-data">
+<h2>Example Data<a class="headerlink" href="#example-data" title="Link to this heading"></a></h2>
+<p>Here are some typical data points as well as some outliers.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">n_examples</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">points</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_points</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="n">n_examples</span><span class="p">],</span> <span class="n">outlier</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="n">n_examples</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sonify</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">base_freq</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-
-<span class="c1"># ### Trials</span>
-
-<span class="c1"># Now we get some data points and outliers shuffle them randomly and let participants guess.</span>
+<span class="n">sonify</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">base_freq</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>data 1
@@ -229,22 +224,21 @@ outlier 5
 &lt;IPython.lib.display.Audio object&gt;
 </pre></div>
 </div>
+</section>
+<section id="trials">
+<h2>Trials<a class="headerlink" href="#trials" title="Link to this heading"></a></h2>
+<p>Now we get some data points and outliers shuffle them randomly and let participants guess.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">n_test</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">points</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_points</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n_examples</span><span class="p">:</span><span class="n">n_examples</span><span class="o">+</span><span class="n">n_test</span><span class="p">],</span>
                             <span class="n">outlier</span><span class="o">=</span><span class="n">outlier</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">n_examples</span><span class="p">:</span><span class="n">n_examples</span><span class="o">+</span><span class="n">n_test</span><span class="p">],</span>
                             <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-
-<span class="c1"># For the evaluation, we once print their correct labels.</span>
 </pre></div>
 </div>
+<p>For the evaluation, we once print their correct labels.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------&quot;</span><span class="p">)</span>
 <span class="n">sonify</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">base_freq</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-
-<span class="c1"># Now we just print a point index (this is shown to the participants)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>outlier 10
@@ -310,6 +304,7 @@ data 4
 &lt;IPython.lib.display.Audio object&gt;
 </pre></div>
 </div>
+<p>Now we just print a point index (this is shown to the participants)</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sonify</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">base_freq</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -355,7 +350,7 @@ point 20
 &lt;IPython.lib.display.Audio object&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.619 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.518 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-harmonic-sonification-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/da26e7c0ae343d9bdb35af0154b081db/Harmonic_Sonification.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Harmonic_Sonification.ipynb</span></code></a></p>
@@ -368,6 +363,7 @@ point 20
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
 </section>
 
 

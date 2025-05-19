@@ -21,24 +21,9 @@
 Harmonic Sonification
 =====================
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-9
+.. GENERATED FROM PYTHON SOURCE LINES 6-16
 
 .. code-block:: Python
-
-
-    # # Harmonic Sonification
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 10-25
-
-.. code-block:: Python
-
 
 
     import random
@@ -50,9 +35,6 @@ Harmonic Sonification
     hs.seed_everything(42)
 
 
-    # ## Data Set Creation
-
-    # We want to test whether our harmonic sonification approach allows users to distinguish typical data points from outliers just based on the sound. For this, we first create an artificial data set with the characteristics typically obtained from applying PCA (i.e. dimensions with decreasing variance). We then create an _outlier_ data set with uniformly distributed points (some of these points will be like typical data points, but most will fall outside the distribution).
 
 
 
@@ -60,12 +42,21 @@ Harmonic Sonification
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 17-19
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-47
+Data Set Creation
+-----------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 19-42
 
 .. code-block:: Python
 
 
+    # We want to test whether our harmonic sonification approach allows users to distinguish typical data points from
+    # outliers just based on the sound. For this, we first create an artificial data set with the characteristics
+    # typically obtained from applying PCA (i.e. dimensions with decreasing variance). We then create an _outlier_ data
+    # set with uniformly distributed points (some of these points will be like typical data points, but most will fall
+    # outside the distribution).
 
     dim = 16                               # dimensions
     n_data = 100                           # number of data points
@@ -82,9 +73,6 @@ Harmonic Sonification
     print(f"std: {std.round(2)}")
     print(f"outliers in [-{uniform}, {uniform}]")
     plt.plot(std, '-o');
-
-
-    # We can create scatter plots for all pairs of dimensions, which gives a rough idea of the two distributions.
 
 
 
@@ -105,14 +93,18 @@ Harmonic Sonification
      0.02 0.02]
     outliers in [-3, 3]
 
-    [<matplotlib.lines.Line2D object at 0x7fb091832750>]
+    [<matplotlib.lines.Line2D object at 0x7f403579b6e0>]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-61
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
+
+We can create scatter plots for all pairs of dimensions, which gives a rough idea of the two distributions
+(commented out because it takes very long).
+
+.. GENERATED FROM PYTHON SOURCE LINES 45-53
 
 .. code-block:: Python
-
 
 
     # combined = pd.concat([outlier, data], ignore_index=True)
@@ -122,9 +114,6 @@ Harmonic Sonification
     #     ax.set_ylim(-uniform, uniform)
 
 
-    # ## Sonification
-
-    # Lowest and highest frequency that may appear in the sonification, just for reference.
 
 
 
@@ -132,20 +121,22 @@ Harmonic Sonification
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 54-56
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-72
+Sonification
+------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 56-64
 
 .. code-block:: Python
 
 
+    # Lowest and highest frequency that may appear in the sonification, just for reference.
 
     base_freq = 110
     amps = [1 if (i==0 or i==dim-1) else 0 for i in range(dim)]
     hs.audio(hs.render(hs.harmonic_tone(base_freq, amps=amps)))
     amps
-
-
-    # Helper functions to extract data points, randomise their order (for the experiment), and sonify them
 
 
 
@@ -161,10 +152,13 @@ Harmonic Sonification
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-87
+.. GENERATED FROM PYTHON SOURCE LINES 65-66
+
+Helper functions to extract data points, randomise their order (for the experiment), and sonify them
+
+.. GENERATED FROM PYTHON SOURCE LINES 66-78
 
 .. code-block:: Python
-
 
 
     def get_points(data, outlier, shuffle):
@@ -185,11 +179,9 @@ Harmonic Sonification
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 88-113
+.. GENERATED FROM PYTHON SOURCE LINES 79-99
 
 .. code-block:: Python
-
 
 
     def sonify(points, labels, std, base_freq, add_fundamental=True, label=False, print_amps=False):
@@ -211,9 +203,6 @@ Harmonic Sonification
             hs.audio(hs.harmonic_tone(base_freq, amps=amps))
 
 
-    # ### Example Data
-
-    # Here are some typical data points as well as some outliers.
 
 
 
@@ -221,36 +210,21 @@ Harmonic Sonification
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 100-104
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-120
+Example Data
+------------
+
+Here are some typical data points as well as some outliers.
+
+.. GENERATED FROM PYTHON SOURCE LINES 104-109
 
 .. code-block:: Python
-
 
 
     n_examples = 5
     points, labels = get_points(data.values[:n_examples], outlier.values[:n_examples], False)
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 121-130
-
-.. code-block:: Python
-
-
-
     sonify(points, labels, std, base_freq, label=True)
-
-
-    # ### Trials
-
-    # Now we get some data points and outliers shuffle them randomly and let participants guess.
 
 
 
@@ -284,10 +258,16 @@ Harmonic Sonification
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-141
+.. GENERATED FROM PYTHON SOURCE LINES 110-114
+
+Trials
+------
+
+Now we get some data points and outliers shuffle them randomly and let participants guess.
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-120
 
 .. code-block:: Python
-
 
 
     n_test = 10
@@ -296,28 +276,25 @@ Harmonic Sonification
                                 shuffle=True)
 
 
-    # For the evaluation, we once print their correct labels.
 
 
 
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 121-122
 
+For the evaluation, we once print their correct labels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-152
+.. GENERATED FROM PYTHON SOURCE LINES 122-128
 
 .. code-block:: Python
-
 
 
     for l in labels:
         print(l)
     print("--------------------")
     sonify(points, labels, std, base_freq, label=True)
-
-
-    # Now we just print a point index (this is shown to the participants)
 
 
 
@@ -392,14 +369,16 @@ Harmonic Sonification
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-157
+.. GENERATED FROM PYTHON SOURCE LINES 129-130
+
+Now we just print a point index (this is shown to the participants)
+
+.. GENERATED FROM PYTHON SOURCE LINES 130-132
 
 .. code-block:: Python
 
 
-
     sonify(points, labels, std, base_freq)
-
 
 
 
@@ -455,7 +434,7 @@ Harmonic Sonification
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.619 seconds)
+   **Total running time of the script:** (0 minutes 1.518 seconds)
 
 
 .. _sphx_glr_download_auto_examples_Harmonic_Sonification.py:
