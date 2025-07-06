@@ -14,18 +14,33 @@
    .. autosummary::
       :toctree:
    
-      audio
       fade_wave
-      harmonic_tone
+      freqs_to_octave
+      harmonics
+      n_primes
       normalise_wave
+      octaves
       render
       save
       seed_everything
+      sonify
+      sonify_am
+      sonify_fm
       sound
    
    
 
    
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Audio
+      PCA
+      Transformation
    
    
 

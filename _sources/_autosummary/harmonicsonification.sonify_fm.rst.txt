@@ -1,0 +1,6 @@
+harmonicsonification.sonify\_fm
+===============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: sonify_fm

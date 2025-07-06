@@ -1,0 +1,6 @@
+harmonicsonification.n\_primes
+==============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: n_primes

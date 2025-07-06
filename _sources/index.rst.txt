@@ -4,11 +4,12 @@ Welcome to HarmonicSonification's documentation!
 =================================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
    :caption: Contents:
 
-   auto_examples/index.rst
+   notebook_gallery
    api_summary
+..   auto_examples/index.rst
 
 .. Indices and tables
 .. ==================

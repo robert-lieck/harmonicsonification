@@ -1,0 +1,11 @@
+harmonicsonification.Audio
+==========================
+
+.. currentmodule:: harmonicsonification
+
+.. autoclass:: Audio
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   .. autoclasstoc::

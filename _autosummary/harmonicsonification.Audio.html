@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>harmonicsonification.sound &mdash; harmonicsonification  documentation</title>
+  <title>harmonicsonification.Audio &mdash; harmonicsonification  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="harmonicsonification.Audio" href="harmonicsonification.Audio.html" />
-    <link rel="prev" title="harmonicsonification.sonify_fm" href="harmonicsonification.sonify_fm.html" /> 
+    <link rel="next" title="harmonicsonification.PCA" href="harmonicsonification.PCA.html" />
+    <link rel="prev" title="harmonicsonification.sound" href="harmonicsonification.sound.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,11 +64,11 @@
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify.html">harmonicsonification.sonify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify_am.html">harmonicsonification.sonify_am</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify_fm.html">harmonicsonification.sonify_fm</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">harmonicsonification.sound</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#harmonicsonification.sound"><code class="docutils literal notranslate"><span class="pre">sound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sound.html">harmonicsonification.sound</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">harmonicsonification.Audio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#harmonicsonification.Audio"><code class="docutils literal notranslate"><span class="pre">Audio</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.Audio.html">harmonicsonification.Audio</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.PCA.html">harmonicsonification.PCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.Transformation.html">harmonicsonification.Transformation</a></li>
 </ul>
@@ -93,7 +93,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../api_summary.html">API Summary</a></li>
           <li class="breadcrumb-item"><a href="harmonicsonification.html">harmonicsonification</a></li>
-      <li class="breadcrumb-item active">harmonicsonification.sound</li>
+      <li class="breadcrumb-item active">harmonicsonification.Audio</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -102,12 +102,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="harmonicsonification-sound">
-<h1>harmonicsonification.sound<a class="headerlink" href="#harmonicsonification-sound" title="Link to this heading"></a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="harmonicsonification.sound">
-<span class="sig-prename descclassname"><span class="pre">harmonicsonification.</span></span><span class="sig-name descname"><span class="pre">sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/harmonicsonification.html#sound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonicsonification.sound" title="Link to this definition"></a></dt>
+  <section id="harmonicsonification-audio">
+<h1>harmonicsonification.Audio<a class="headerlink" href="#harmonicsonification-audio" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonicsonification.Audio">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonicsonification.</span></span><span class="sig-name descname"><span class="pre">Audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/harmonicsonification.html#Audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonicsonification.Audio" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<div class="autoclasstoc docutils container">
+<p class="rubric">Public Data Attributes:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#harmonicsonification.Audio.wave" title="harmonicsonification.Audio.wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wave</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#harmonicsonification.Audio.audio" title="harmonicsonification.Audio.audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">audio</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#harmonicsonification.Audio.html" title="harmonicsonification.Audio.html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">html</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoclasstoc docutils container">
+<p class="rubric">Public Methods:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>(freqs, amps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#harmonicsonification.Audio.display" title="harmonicsonification.Audio.display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<dl class="py property">
+<dt class="sig sig-object py" id="harmonicsonification.Audio.audio">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">audio</span></span><a class="headerlink" href="#harmonicsonification.Audio.audio" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonicsonification.Audio.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/harmonicsonification.html#Audio.display"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonicsonification.Audio.display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="harmonicsonification.Audio.html">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">html</span></span><a class="headerlink" href="#harmonicsonification.Audio.html" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="harmonicsonification.Audio.wave">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wave</span></span><a class="headerlink" href="#harmonicsonification.Audio.wave" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </section>
 
@@ -115,8 +166,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="harmonicsonification.sonify_fm.html" class="btn btn-neutral float-left" title="harmonicsonification.sonify_fm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="harmonicsonification.Audio.html" class="btn btn-neutral float-right" title="harmonicsonification.Audio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="harmonicsonification.sound.html" class="btn btn-neutral float-left" title="harmonicsonification.sound" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="harmonicsonification.PCA.html" class="btn btn-neutral float-right" title="harmonicsonification.PCA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

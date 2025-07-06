@@ -1,0 +1,11 @@
+harmonicsonification.Transformation
+===================================
+
+.. currentmodule:: harmonicsonification
+
+.. autoclass:: Transformation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   .. autoclasstoc::

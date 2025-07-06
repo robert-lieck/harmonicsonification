@@ -1,0 +1,11 @@
+harmonicsonification.PCA
+========================
+
+.. currentmodule:: harmonicsonification
+
+.. autoclass:: PCA
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+   .. autoclasstoc::

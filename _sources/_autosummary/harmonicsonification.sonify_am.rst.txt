@@ -1,0 +1,6 @@
+harmonicsonification.sonify\_am
+===============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: sonify_am

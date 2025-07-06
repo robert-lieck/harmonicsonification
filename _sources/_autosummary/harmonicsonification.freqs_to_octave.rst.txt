@@ -1,0 +1,6 @@
+harmonicsonification.freqs\_to\_octave
+======================================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: freqs_to_octave

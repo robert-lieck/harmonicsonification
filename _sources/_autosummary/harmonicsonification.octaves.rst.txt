@@ -1,0 +1,6 @@
+harmonicsonification.octaves
+============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: octaves

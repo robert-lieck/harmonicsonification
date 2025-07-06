@@ -1,0 +1,6 @@
+harmonicsonification.harmonics
+==============================
+
+.. currentmodule:: harmonicsonification
+
+.. autofunction:: harmonics

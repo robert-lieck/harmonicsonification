@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="harmonicsonification.audio" href="harmonicsonification.audio.html" />
+    <link rel="next" title="harmonicsonification.fade_wave" href="harmonicsonification.fade_wave.html" />
     <link rel="prev" title="API Summary" href="../api_summary.html" /> 
 </head>
 
@@ -49,17 +49,25 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">HarmonicSonification Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook_gallery.html">HarmonicSonification Notebook Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api_summary.html">API Summary</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">harmonicsonification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.audio.html">harmonicsonification.audio</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.fade_wave.html">harmonicsonification.fade_wave</a></li>
-<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.harmonic_tone.html">harmonicsonification.harmonic_tone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.freqs_to_octave.html">harmonicsonification.freqs_to_octave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.harmonics.html">harmonicsonification.harmonics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.n_primes.html">harmonicsonification.n_primes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.normalise_wave.html">harmonicsonification.normalise_wave</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.octaves.html">harmonicsonification.octaves</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.render.html">harmonicsonification.render</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.save.html">harmonicsonification.save</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.seed_everything.html">harmonicsonification.seed_everything</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify.html">harmonicsonification.sonify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify_am.html">harmonicsonification.sonify_am</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sonify_fm.html">harmonicsonification.sonify_fm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="harmonicsonification.sound.html">harmonicsonification.sound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.Audio.html">harmonicsonification.Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.PCA.html">harmonicsonification.PCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonicsonification.Transformation.html">harmonicsonification.Transformation</a></li>
 </ul>
 </li>
 </ul>
@@ -95,17 +103,23 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.audio.html#harmonicsonification.audio" title="harmonicsonification.audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">audio</span></code></a>(wave[, fade])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.fade_wave.html#harmonicsonification.fade_wave" title="harmonicsonification.fade_wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fade_wave</span></code></a>(wave[, time, start, end])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.fade_wave.html#harmonicsonification.fade_wave" title="harmonicsonification.fade_wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fade_wave</span></code></a>(wave[, time, start, end])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.freqs_to_octave.html#harmonicsonification.freqs_to_octave" title="harmonicsonification.freqs_to_octave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freqs_to_octave</span></code></a>(freqs[, f0, octs])</p></td>
+<td><p>Maps frequencies to octave above f0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.harmonics.html#harmonicsonification.harmonics" title="harmonicsonification.harmonics"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonics</span></code></a>(f0, n[, prime])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.harmonic_tone.html#harmonicsonification.harmonic_tone" title="harmonicsonification.harmonic_tone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic_tone</span></code></a>(f0[, decay, n, amps])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.n_primes.html#harmonicsonification.n_primes" title="harmonicsonification.n_primes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_primes</span></code></a>(n)</p></td>
+<td><p>Returns array of first n primes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.normalise_wave.html#harmonicsonification.normalise_wave" title="harmonicsonification.normalise_wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalise_wave</span></code></a>(wave[, max_amp])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.normalise_wave.html#harmonicsonification.normalise_wave" title="harmonicsonification.normalise_wave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalise_wave</span></code></a>(wave[, max_amp])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.octaves.html#harmonicsonification.octaves" title="harmonicsonification.octaves"><code class="xref py py-obj docutils literal notranslate"><span class="pre">octaves</span></code></a>(f0, freqs)</p></td>
+<td><p>Get the octave above f0 for each frequency</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.render.html#harmonicsonification.render" title="harmonicsonification.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(wave[, normalise, fade])</p></td>
 <td><p></p></td>
@@ -116,8 +130,31 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.seed_everything.html#harmonicsonification.seed_everything" title="harmonicsonification.seed_everything"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_everything</span></code></a>(seed)</p></td>
 <td><p>Set random seed for reproducibility across multiple libraries.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.sound.html#harmonicsonification.sound" title="harmonicsonification.sound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sound</span></code></a>(func[, phases, duration])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.sonify.html#harmonicsonification.sonify" title="harmonicsonification.sonify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sonify</span></code></a>(method, x, **kwargs)</p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.sonify_am.html#harmonicsonification.sonify_am" title="harmonicsonification.sonify_am"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sonify_am</span></code></a>(x[, f0, add_f0, f0_amp, prime, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.sonify_fm.html#harmonicsonification.sonify_fm" title="harmonicsonification.sonify_fm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sonify_fm</span></code></a>(x[, f0, alpha, amplitudes, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.sound.html#harmonicsonification.sound" title="harmonicsonification.sound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sound</span></code></a>(func[, phases, duration])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.Audio.html#harmonicsonification.Audio" title="harmonicsonification.Audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Audio</span></code></a>(freqs, amps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="harmonicsonification.PCA.html#harmonicsonification.PCA" title="harmonicsonification.PCA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCA</span></code></a>([data])</p></td>
+<td><p>Initialise object and fit data if provided</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="harmonicsonification.Transformation.html#harmonicsonification.Transformation" title="harmonicsonification.Transformation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Transformation</span></code></a>([data])</p></td>
+<td><p>Initialise object and fit data if provided</p></td>
 </tr>
 </tbody>
 </table>
@@ -128,7 +165,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../api_summary.html" class="btn btn-neutral float-left" title="API Summary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="harmonicsonification.audio.html" class="btn btn-neutral float-right" title="harmonicsonification.audio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="harmonicsonification.fade_wave.html" class="btn btn-neutral float-right" title="harmonicsonification.fade_wave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
