@@ -1,6 +1,7 @@
-IPython
+ipython
 matplotlib
 seaborn
 pandas
 numpy
 scipy
+scikit-learn
