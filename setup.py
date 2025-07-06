@@ -8,7 +8,7 @@ with open("requirements.txt", "r") as fh:
 
 setuptools.setup(
     name="harmonicsonification",
-    version="0.0.1",
+    version="0.1.0",
     author="Robert Lieck",
     author_email="robert.lieck@durham.ac.uk",
     description="Sonify data using harmonic overtones ",
